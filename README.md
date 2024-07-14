@@ -101,6 +101,4 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
 
-Feel free to customize the README file according to your specific project details and repository information.
