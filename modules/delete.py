@@ -9,14 +9,14 @@ class deleteData:
         if 'student'==name.lower():
             readColl=self.database['studentData']
             readColl.delete_one({'_id':id})
-            return f'Deleted Successfully in student data using Student ID'
+            return 'Deleted Successfully in student data using Student ID'
         elif 'course'== name.lower():
             readColl=self.database['courseData']
             readColl.delete_one({'_id':id})
-            return f'Deleted Successfully in student data using Course ID'
+            return 'Deleted Successfully in student data using Course ID'
         elif 'trans'==name.lower():
             readColl=self.database['transactionData'] 
             readColl.delete_one({'_id':id})
-            return f'Deleted Successfully in student data using Transaction ID'
+            return 'Deleted Successfully in student data using Transaction ID'
 
 

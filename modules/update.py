@@ -12,18 +12,18 @@ class updateData:
                 {'_id':id},
                 {'$set':keys}
                 )
-            return f'Updated Successfully in student data using Student ID'
+            return 'Updated Successfully in student data using Student ID'
         elif 'course'== name.lower():
             readColl=self.database['courseData']
             readColl.update_one(
                 {'_id':id},
                 {'$set':keys}
                 )
-            return f'Updated Successfully in student data using Course ID'
+            return 'Updated Successfully in student data using Course ID'
         elif 'trans'==name.lower():
             readColl=self.database['transactionData'] 
             readColl.update_one(
                 {'_id':id},
                 {'$set':keys}
                 )
-            return f'Updated Successfully in student data using Transaction ID'
+            return 'Updated Successfully in student data using Transaction ID'

@@ -3,7 +3,7 @@ from modules.insert import InsertData
 from modules.read import readData
 from modules.update import updateData
 from modules.delete import deleteData
-from validator_collection import validators, checkers, errors
+from validator_collection import validators, errors
 
 def main():
     while True:

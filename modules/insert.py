@@ -15,7 +15,7 @@ class InsertData:
             'mobileNumber':mobileNumber
         }
         '''
-        return f'SuccessFully inserted an Student data '
+        return 'SuccessFully inserted an Student data '
     def courseData(self,course):
         collCourse=self.database['courseData']
         collCourse.insert_one(course)
@@ -27,7 +27,7 @@ class InsertData:
             'Teacher':courseTeacher
         }
         '''
-        return f'Successfully Inserted an Course Data'
+        return 'Successfully Inserted an Course Data'
     def transactionData(self,trans):
         databaseTransaction=self.database['transactionData']
         databaseTransaction.insert_one(trans)
@@ -40,4 +40,4 @@ class InsertData:
             'status':status
         }
         '''
-        return f'SuccessFully Inserted In Transaction Data'
+        return 'SuccessFully Inserted In Transaction Data'

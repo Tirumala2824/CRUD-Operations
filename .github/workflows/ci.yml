@@ -30,6 +30,6 @@ jobs:
       - name: Compile source
         run: python -m compileall -q main.py modules tests
       - name: Lint Python
-        run: ruff check .
+        run: ruff check . --select F,E --ignore E501
       - name: Run tests
         run: pytest -q
