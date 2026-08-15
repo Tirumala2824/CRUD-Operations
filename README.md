@@ -1,54 +1,54 @@
-# CRUD-Operations
+# CRUD Operations
 
-> A maintainable software project maintained by [Tirumala2824](https://github.com/Tirumala2824).
+> A Python application for demonstrating create, read, update, and delete workflows across a small data-backed project with a Streamlit-facing entry point.
 
 [![CI](https://github.com/Tirumala2824/CRUD-Operations/actions/workflows/ci.yml/badge.svg)](https://github.com/Tirumala2824/CRUD-Operations/actions/workflows/ci.yml)
 
-## Overview
+## Status
 
-This repository contains **CRUD-Operations**. Replace this paragraph with the precise user problem, target audience, and project outcome before treating the repository as production-ready.
+**Category:** Application.
+
+**Lifecycle:** Active remediation. The repository has a testable structure and CI baseline, but production deployment would require a reviewed persistence model, authentication and authorization, observability, migration strategy, and a validated deployment target.
 
 ## Features
 
-Document the supported functionality, important workflows, and known non-goals here.
+The project demonstrates CRUD-oriented data access, application modules, a local database boundary, and a Streamlit-compatible interface. The tests protect repository structure and data contracts; feature behavior should be expanded with focused tests as the application boundary becomes more specific.
 
-## Tech stack
+## Architecture
 
-- **Detected technology:** Python
-- **Repository contents:** `.devcontainer`, `.gitignore`, `README.md`, `database`, `main.py`, `modules`, `readme.md`, `requirements.txt`, `streamlit.py`
+```text
+Streamlit or application entry point
+    -> modules and use-case functions
+    -> database boundary
+    -> persisted application data
+```
 
-## Installation
+Keep UI concerns, business rules, and persistence operations separate. Configuration belongs at the application boundary, and external input must be validated before it reaches the data layer. See [`docs/architecture.md`](docs/architecture.md) and [`docs/engineering-standards.md`](docs/engineering-standards.md).
+
+## Local development
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt  # when present
+. .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-## Usage
-
-Add the smallest useful command or example that demonstrates the project. Include screenshots or a live demo when the project has a visual interface.
-
-## Configuration
-
-Copy `.env.example` to `.env` when the project requires environment variables. Never commit `.env` files, credentials, tokens, or private datasets.
-
-## Project structure
-
-See [`docs/architecture.md`](docs/architecture.md) for the maintained structure and architecture notes.
+Use the repository’s application entry point for local interaction. Before sharing a deployment command, verify the current `main.py`, `streamlit.py`, and database configuration in the target environment.
 
 ## Testing and quality
 
-Run the repository's documented tests, formatter, linter, and type checker. The baseline CI workflow is in [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+```bash
+ruff check .
+python -m compileall -q main.py modules tests
+pytest -q
+```
 
-## Deployment
+CI runs these checks on pushes to the default branch and on pull requests.
 
-See [`docs/deployment.md`](docs/deployment.md) when deploying this project. Document hosting, environment configuration, migrations, monitoring, and rollback before production use.
+## Security and deployment limits
 
-## Contributing and security
+Never commit credentials, private data, or production databases. Before deployment, add explicit authentication, authorization, input validation, migration and backup procedures, error handling, logging, and a rollback path. This repository should not be treated as a production service until those boundaries are implemented and reviewed.
 
-Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`SECURITY.md`](SECURITY.md).
+## Contributing and license
 
-## License
-
-This project is released under the [MIT License](LICENSE).
+See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md), and [`CHANGELOG.md`](CHANGELOG.md). The repository is released under the MIT License; see [`LICENSE`](LICENSE).
